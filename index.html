@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>สมัครแข่งขันเปตองการกุศล "ท่าเรือโอเพ่น" 2568</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #fdf6f0;
+      color: #333;
+      padding: 20px;
+    }
+    h1 {
+      text-align: center;
+      color: #5d5d5d;
+    }
+    form {
+      max-width: 600px;
+      margin: 0 auto;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    label {
+      display: block;
+      margin-top: 10px;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #a8dadc;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #457b9d;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <h1>สมัครแข่งขันเปตองการกุศล "ท่าเรือโอเพ่น" 2568</h1>
+  <form id="registrationForm" method="POST" action="https://script.google.com/macros/s/AKfycbzJYjgoGbpT-qVAoFOJlCJLLtPq6z3eigGkIQ1Nc-f0dt5653HbF5MhYCwZh2R5azAI/exec">
+    <label for="teamName">ชื่อทีม:</label>
+    <input type="text" id="teamName" name="ชื่อทีม" required>
+
+    <label for="phone">หมายเลขโทรศัพท์:</label>
+    <input type="tel" id="phone" name="หมายเลขโทรศัพท์" required>
+
+    <label for="maleTeam">จำนวนทีมชาย 3 คน:</label>
+    <input type="number" id="maleTeam" name="ทีมชาย 3 คน" min="0" required>
+
+    <label for="femaleTeam">จำนวนทีมหญิง 3 คน:</label>
+    <input type="number" id="femaleTeam" name="ทีมหญิง 3 คน" min="0" required>
+
+    <label for="youthTeam">จำนวนทีมเยาวชน 3 คน (อายุไม่เกิน 17 ปี):</label>
+    <input type="number" id="youthTeam" name="ทีมเยาวชน 3 คน" min="0" required>
+
+    <label for="seniorTeam">จำนวนทีมอาวุโส 2 คน (ชายอายุ 55 ปีขึ้นไป หญิงอายุ 50 ปีขึ้นไป):</label>
+    <input type="number" id="seniorTeam" name="ทีมอาวุโส 2 คน" min="0" required>
+
+    <label for="juniorTeam">จำนวนทีมยุวชน 2 คน (อายุไม่เกิน 13 ปี):</label>
+    <input type="number" id="juniorTeam" name="ทีมยุวชน 2 คน" min="0" required>
+
+    <label for="paymentSlip">แนบหลักฐานการโอนเงิน (ภาพหรือ PDF):</label>
+    <input type="file" id="paymentSlip" name="หลักฐานการโอนเงิน" accept=".jpg,.jpeg,.png,.pdf" required>
+
+    <label for="needReceipt">ต้องการใบเสร็จรับเงินหรือไม่:</label>
+    <select id="needReceipt" name="ต้องการใบเสร็จรับเงิน" onchange="toggleReceiptFields()">
+      <option value="ไม่ต้องการ">ไม่ต้องการ</option>
+      <option value="ต้องการ">ต้องการ</option>
+    </select>
+
+    <div id="receiptFields" style="display: none;">
+      <label for="receiptName">ชื่อบริษัท/บุคคล/ทีม ที่ต้องการระบุบนใบเสร็จรับเงิน:</label>
+      <input type="text" id="receiptName" name="ชื่อสำหรับใบเสร็จ">
+
+      <label for="branch">สาขาที่ให้ระบุใบเสร็จ (เช่น สำนักงานใหญ่):</label>
+      <input type="text" id="branch" name="สาขาใบเสร็จ">
+
+      <label for="address">ที่อยู่ที่ให้ระบุบนใบเสร็จ:</label>
+      <textarea id="address" name="ที่อยู่ใบเสร็จ"></textarea>
+
+      <label for="taxId">เลขประจำตัวผู้เสียภาษีอากร:</label>
+      <input type="text" id="taxId" name="เลขประจำตัวผู้เสียภาษี">
+    </div>
+
+    <button type="submit">ส่งข้อมูล</button>
+  </form>
+
+  <script>
+    function toggleReceiptFields() {
+      var needReceipt = document.getElementById("needReceipt").value;
+      var receiptFields = document.getElementById("receiptFields");
+      if (needReceipt === "ต้องการ") {
+        receiptFields.style.display = "block";
+      } else {
+        receiptFields.style.display = "none";
+      }
+    }
+  </script>
+</body>
+</html>
